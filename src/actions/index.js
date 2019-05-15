@@ -24,12 +24,14 @@ axios
         type:SUCCESS,
         payload:res.data.results
     })
-    .catch(error=>{
+})
+.catch(error=>{
+        console.log(error)
         dispatch({
             type:FAILURE,
             payload:error
         })
-    })
+    
 })
 
 }

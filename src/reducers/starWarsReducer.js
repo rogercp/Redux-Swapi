@@ -2,7 +2,7 @@ import /* we need our action types here*/  {FETCHING ,  SUCCESS  ,   FAILURE }  
 const initialState = {
   characters: [],
   fetching:false,
-  error:"",
+  error:'',
   // Array characters, Boolean fetching, null error.
 };
 export const charsReducer = (state = initialState, action) => {
@@ -22,7 +22,7 @@ export const charsReducer = (state = initialState, action) => {
     return {
       ...state,
       fetching:false,
-      characters:action.payload,
+      characters:[...state.characters,...action.payload],
       error:''
     }
     
