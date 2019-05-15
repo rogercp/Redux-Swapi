@@ -19,7 +19,7 @@ dispatch({type:FETCHING});
 axios
 .get('https://swapi.co/api/people')
 .then(res=>{
-    
+    console.log(res.data.results)
     dispatch({
         type:SUCCESS,
         payload:res.data.results
@@ -27,7 +27,7 @@ axios
     .catch(error=>{
         dispatch({
             type:FAILURE,
-            payload:error.text
+            payload:error
         })
     })
 })
